@@ -16,7 +16,8 @@ class Course:
 				if 'course' in tokens[0]:
 					self.objects.append(Arena('course',eval(tokens[1])/10,eval(tokens[2])/10,eval(tokens[3])/10,eval(tokens[4])/10))
 				elif 'pole' in tokens[0]:
-					self.objects.append(Pole('pole',eval(tokens[1])/10,eval(tokens[2])/10))
+					self.objects.append(Pole('pole',eval(tokens[1])/10,eval(tokens[2])/10,eval(tokens[3])/10))
+					
 				elif 'wall' in tokens[0]:
 					self.objects.append(Wall('wall',eval(tokens[1])/10,eval(tokens[2])/10,\
 											eval(tokens[3])/10,eval(tokens[4])/10))
@@ -33,12 +34,17 @@ class Course:
 					self.objects.append(Net('net',eval(tokens[1])/10,eval(tokens[2])/10))
 				elif 'door' in tokens[0]:
 					self.objects.append(Door('door',eval(tokens[1])/10,eval(tokens[2])/10))
+
 					
 	def getObjectList(self):
 		return self.objects
-	
 		
-								
+		
+	def getCourseDimensions(self):
+		for i in range(len(self.objects)):
+			if self.objects[i].oType == "course":
+				return (self.objects[i].width,self.objects[i].height)
+
 ### Superclass for all obstacles.
 ### x -> the x axis position of the obstacle in mm.
 ### y -> the y axis position of the obstacle in mm.

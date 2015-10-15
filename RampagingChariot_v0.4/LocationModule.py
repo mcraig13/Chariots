@@ -17,7 +17,7 @@ class Location:
             self.motorAbstract.forward(1)
             self.x,self.y = self.motorAbstract.getCurrentPosition()
             for observer in self.locationObserverAbstractList:
-                observer.locationUpdated(self.x,self.y)
+                observer.locationUpdated(self.x,self.y, 0)
             
 
     ### You should call this method after you have initialised the Location

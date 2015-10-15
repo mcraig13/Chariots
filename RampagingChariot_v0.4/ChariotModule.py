@@ -6,8 +6,7 @@ class Chariot:
 
     ### Creates a chariot object but does not start the loop thread. 
     ### To start operation call (Chariot).start() from your Main script.
-    def __init__(self, rangeFinderAbstract, motorAbstract, locationObserverAbstractList):
-        self.width, self.length = [31,45]
+    def __init__(self, rangeFinderAbstract, motorAbstract, locationObserverAbstractList, chariotcf ):
         self.x, self.y = [160,47]
         self.bearing = 0
         self.speed = 90
@@ -20,3 +19,15 @@ class Chariot:
         #self.main = threading.Thread(target=self.loop)
         #self.main.daemon = True
 
+
+class ChariotConfig:
+	
+	def __init__(self):
+		self.width = 31
+		self.length = 45
+		self.xoffset = 20
+		self.yoffset = 10
+		
+	
+	
+	

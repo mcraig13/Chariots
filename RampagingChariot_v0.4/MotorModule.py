@@ -1,6 +1,5 @@
 from abc import ABCMeta, abstractmethod
 
-
 class MotorAbstract(object):
     __metaclass__ = ABCMeta
 
@@ -20,8 +19,6 @@ class MotorAbstract(object):
     def getCurrentPosition(self):
         pass
 
-
-
 class MotorSim(MotorAbstract):
 
     def __init__(self):
@@ -36,13 +33,13 @@ class MotorSim(MotorAbstract):
         self.speed = speed
         self.x += 1
         self.y += 1
-        print "Moving forward at {}".format(speed)
+        print "Moving forward at ".format(speed)
 
     def reverse(self, speed):
         self.speed = speed
         self.x -= 1
         self.y -= 1
-        print "Moving backwards at {}".format(speed)
+        print "Moving backwards at ".format(speed)
 
     def getCurrentPosition(self):
         return (self.x,self.y)
